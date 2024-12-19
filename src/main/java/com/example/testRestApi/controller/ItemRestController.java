@@ -1,7 +1,8 @@
 package com.example.testRestApi.controller;
 
 
-import com.example.testRestApi.model.Item;
+import com.example.testRestApi.dto.ItemDto;
+import com.example.testRestApi.mapper.ItemMapper;
 import com.example.testRestApi.service.ItemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -14,15 +15,16 @@ import java.util.List;
 public class ItemRestController {
 
     private final ItemService itemService;
+    private final ItemMapper itemMapper;
 
     @GetMapping("/get-all")
-    public List<Item> getAllItems(){
-        return itemService.getAll();
+    public List<ItemDto> getAllItems(){
+        return itemMapper.listItemDto(itemService.getAll());
     }
 
     @PostMapping("/add-item")
-    public void addItem(@RequestBody Item item){
-        itemService.addItem(item);
+    public void addItem(@RequestBody ItemDto itemDto){
+        itemService.addItem(itemMapper.toItem(itemDto));
     }
 
     @DeleteMapping("/remove/{id}")
@@ -31,12 +33,12 @@ public class ItemRestController {
     }
 
     @GetMapping("/search/{id}")
-    public Item findById(@PathVariable int id){
-        return itemService.findItemById(id);
+    public ItemDto findById(@PathVariable int id){
+        return  itemMapper.toItemDto(itemService.findItemById(id));
     }
 
     @PutMapping("/update")
-    public void updateItem(@RequestBody Item item){
-        itemService.updateItem(item);
+    public void updateItem(@RequestBody ItemDto itemDto){
+        itemService.updateItem(itemMapper.toItem(itemDto));
     }
 }

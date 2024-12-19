@@ -1,10 +1,12 @@
 package com.example.testRestApi.service;
 
+import com.example.testRestApi.dto.ItemDto;
 import com.example.testRestApi.model.Item;
 import com.example.testRestApi.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -33,4 +35,25 @@ public class ItemService {
     public Item findItemById(int id){
         return repository.findById(id).get();
     }
+
+//    public ItemDto convertToDto(Item item){
+//        ItemDto itemDto = new ItemDto();
+//        itemDto.setId(item.getId());
+//        itemDto.setName(item.getName());
+//        itemDto.setDescription(item.getDescription());
+//        itemDto.setDateCreate(item.getCreateAt());
+//        itemDto.setDateUpdate(item.getUpdateAt());
+//
+//        return itemDto;
+//    }
+//
+//    public List<ItemDto> getConvertDtos(List<Item> items){
+//        List<ItemDto>itemDtosList = new ArrayList<>();
+//
+//        for(Item it: items){
+//            itemDtosList.add(convertToDto(it));
+//        }
+//
+//        return itemDtosList;
+//    }
 }
