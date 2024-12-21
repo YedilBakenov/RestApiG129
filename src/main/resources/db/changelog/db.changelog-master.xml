@@ -1,0 +1,52 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <changeSet id="2024_12_21_create_init_tables" author="yedil.bakenov">
+        <sqlFile
+                dbms="postgresql"
+                encoding="UTF-8"
+                endDelimiter=";"
+                path="db/changelog/changes/2024_12_21_create_init_tables.sql"
+                relativeToChangelogFile="false"
+                stripComments="true"
+                splitStatements="true"
+        />
+    </changeSet>
+    <changeSet id="2024_12_21_insert_into_table_items" author="yedil.bakenov">
+        <sqlFile
+                dbms="postgresql"
+                encoding="UTF-8"
+                endDelimiter=";"
+                path="db/changelog/changes/2024_12_21_insert_into_table_items.sql"
+                relativeToChangelogFile="false"
+                stripComments="true"
+                splitStatements="true"
+        />
+    </changeSet>
+    <changeSet id="2024_12_21_change_type_description" author="yedil.bakenov">
+        <sqlFile
+                dbms="postgresql"
+                encoding="UTF-8"
+                endDelimiter=";"
+                path="db/changelog/changes/2024_12_21_change_type_description.sql"
+                relativeToChangelogFile="false"
+                stripComments="true"
+                splitStatements="true"
+        />
+    </changeSet>
+    <changeSet id="2024_12_21_change_type_name" author="yedil.bakenov">
+        <sqlFile
+                dbms="postgresql"
+                encoding="UTF-8"
+                endDelimiter=";"
+                path="db/changelog/changes/2024_12_21_change_type_name.sql"
+                relativeToChangelogFile="false"
+                stripComments="true"
+                splitStatements="true"
+        />
+    </changeSet>
+
+
+</databaseChangeLog>
