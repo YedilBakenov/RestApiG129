@@ -29,6 +29,9 @@ public class Item {
 
     private LocalDateTime updateAt;
 
+    @Enumerated(EnumType.STRING)
+    private Status status;
+
 
     @PrePersist
     public void prePersist(){

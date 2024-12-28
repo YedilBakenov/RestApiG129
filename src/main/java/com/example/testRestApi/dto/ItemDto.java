@@ -20,4 +20,6 @@ public class ItemDto {
     private LocalDateTime dateCreate;
 
     private LocalDateTime dateUpdate;
+
+    private String status;
 }
